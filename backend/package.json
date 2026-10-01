@@ -1,0 +1,56 @@
+{
+  "name": "ot-fortress-backend",
+  "version": "1.0.0",
+  "description": "Servicio local mínimo de acceso para OT-FORTRESS con SQLite.",
+  "author": "OT-FORTRESS",
+  "main": "desktop.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "desktop": "electron .",
+    "dist:win": "electron-builder --win nsis --x64"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "sql.js": "^1.12.0"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "electron": "^37.4.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.otfortress.console",
+    "productName": "OT-FORTRESS",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "**/*",
+      "!data/**/*",
+      "!release/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "../frontend",
+        "to": "frontend",
+        "filter": ["**/*"]
+      }
+    ],
+    "win": {
+      "target": ["nsis"],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "OT-FORTRESS"
+    }
+  }
+}

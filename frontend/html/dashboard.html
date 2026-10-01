@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OT-FORTRESS | Red OT Raspberry Pi</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a class="brand" href="dashboard.html">
+                <img src="../assets/fortress-mark.svg" alt="Logo de OT-Fortress">
+                <span><b>OT-</b>FORTRESS</span>
+            </a>
+            <p class="workspace">RED OT · RASPBERRY PI 3</p>
+            <nav class="navigation" aria-label="Navegación principal">
+                <a class="active" href="dashboard.html"><span>⌘</span> Arquitectura OT</a>
+                <a href="alerts.html"><span>◉</span> Alertas <b>0</b></a>
+                <a href="traffic.html"><span>⌁</span> Red de nodos</a>
+                <a href="assets.html"><span>▦</span> ESP32 conectadas</a>
+                <a href="events.html"><span>◫</span> Bitácora OT</a>
+            </nav>
+            <a class="sensor-card" href="sensors.html" style="text-decoration:none;">
+                <span class="sensor-dot"></span>
+                <div>
+                    <strong>Nodos ESP32</strong>
+                    <small>4 de 4 disponibles</small>
+                </div>
+            </a>
+            <div class="account" style="display:flex; justify-content:space-between; align-items:center;">
+                <a href="profile.html" style="display:flex; align-items:center; gap:10px; color:inherit; text-decoration:none;">
+                    <span class="avatar">SA</span>
+                    <span><strong>Security Operator</strong><small>Ver perfil</small></span>
+                </a>
+                <a href="login.html" title="Cerrar sesión" style="color:#a9c9d9; text-decoration:none; font-size:12px;">✕</a>
+            </div>
+        </aside>
+
+        <main class="dashboard" id="overview">
+            <header class="dashboard-header">
+                <div>
+                    <p class="eyebrow">TOPOLOGÍA VISUAL · RED INDUSTRIAL LOCAL</p>
+                    <h1>Arquitectura OT</h1>
+                    <p class="subtitle">Servidor Raspberry Pi 3 centralizado con cuatro nodos ESP32 para la operación de planta.</p>
+                </div>
+                <div class="header-actions"><span class="live-status"><i></i> Maqueta visual · sin conexión real</span></div>
+            </header>
+
+            <section class="metrics ot-metrics" aria-label="Resumen visual de la red OT">
+                <article class="metric-card"><span class="metric-icon violet">▣</span><div><p>Servidor central</p><strong>01 <small>Raspberry Pi 3</small></strong><em class="green-text">Nodo principal de la red OT</em></div></article>
+                <article class="metric-card"><span class="metric-icon green">▦</span><div><p>Nodos de campo</p><strong>04 <small>ESP32</small></strong><em class="green-text">Diseño previsto: 4 de 4</em></div></article>
+                <article class="metric-card"><span class="metric-icon blue">⌁</span><div><p>Segmentos OT</p><strong>04</strong><em>Un proceso por nodo ESP32</em></div></article>
+                <article class="metric-card"><span class="metric-icon amber">◉</span><div><p>Alertas visuales</p><strong>00</strong><em class="green-text">Escenario de operación normal</em></div></article>
+            </section>
+
+            <section class="ot-topology" aria-labelledby="topology-title">
+                <div class="topology-heading">
+                    <div><h2 id="topology-title">Mapa de red OT</h2><p>Distribución conceptual de responsabilidades para la instalación.</p></div>
+                    <span class="badge blue">Arquitectura propuesta</span>
+                </div>
+
+                <div class="pi-server">
+                    <div class="server-chip">▣</div>
+                    <div>
+                        <span class="node-kicker">SERVIDOR DE RED OT</span>
+                        <h3>Raspberry Pi 3</h3>
+                        <p>Concentrador local de supervisión para los cuatro nodos ESP32.</p>
+                    </div>
+                    <span class="node-status"><i></i> Central</span>
+                </div>
+
+                <div class="topology-connector" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+                <div class="esp-grid">
+                    <article class="esp-node conveyor">
+                        <div class="node-icon">⇄</div>
+                        <div class="node-label"><span>ESP32 · 01</span><i></i> En diseño</div>
+                        <h3>Banda transportadora</h3>
+                        <p>Control visual del movimiento, arranque, parada y estado de la línea.</p>
+                        <div class="node-footer"><span>Proceso</span><b>Producción</b></div>
+                    </article>
+                    <article class="esp-node sensors">
+                        <div class="node-icon">◌</div>
+                        <div class="node-label"><span>ESP32 · 02</span><i></i> En diseño</div>
+                        <h3>Sensores industriales</h3>
+                        <p>Lectura visual de presencia, nivel, temperatura y variables de proceso.</p>
+                        <div class="node-footer"><span>Proceso</span><b>Instrumentación</b></div>
+                    </article>
+                    <article class="esp-node automation">
+                        <div class="node-icon">ϟ</div>
+                        <div class="node-label"><span>ESP32 · 03</span><i></i> En diseño</div>
+                        <h3>Domótica eléctrica</h3>
+                        <p>Supervisión de iluminación, circuitos y elementos de la instalación eléctrica.</p>
+                        <div class="node-footer"><span>Proceso</span><b>Servicios</b></div>
+                    </article>
+                    <article class="esp-node access">
+                        <div class="node-icon">⌑</div>
+                        <div class="node-label"><span>ESP32 · 04</span><i></i> En diseño</div>
+                        <h3>Control de acceso</h3>
+                        <p>Gestión visual de credenciales y acceso por contraseña a puertas.</p>
+                        <div class="node-footer"><span>Proceso</span><b>Seguridad física</b></div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="ot-analytics-grid" aria-label="Telemetría visual de la maqueta OT">
+                <article class="telemetry-card telemetry-wide">
+                    <div class="telemetry-heading">
+                        <div><p class="eyebrow">TELEMETRÍA VISUAL</p><h2>Actividad de la red OT</h2><span>Intercambio conceptual entre Raspberry Pi 3 y los cuatro nodos ESP32.</span></div>
+                        <span class="badge blue">Última hora</span>
+                    </div>
+                    <div class="telemetry-graph">
+                        <div class="graph-axis"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div>
+                        <svg viewBox="0 0 720 210" preserveAspectRatio="none" aria-label="Actividad visual de la red">
+                            <defs><linearGradient id="otActivityFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#39a7d7" stop-opacity=".4"/><stop offset="1" stop-color="#39a7d7" stop-opacity="0"/></linearGradient></defs>
+                            <g class="telemetry-grid-lines"><path d="M0 10H720M0 58H720M0 106H720M0 154H720M0 202H720"/></g>
+                            <path class="telemetry-area" d="M0 166 C35 154,60 144,94 151 S148 109,188 125 S245 88,284 106 S336 150,376 120 S438 59,478 83 S535 98,572 67 S636 113,674 76 S706 56,720 60 V210 H0Z"/>
+                            <path class="telemetry-line" d="M0 166 C35 154,60 144,94 151 S148 109,188 125 S245 88,284 106 S336 150,376 120 S438 59,478 83 S535 98,572 67 S636 113,674 76 S706 56,720 60"/>
+                            <circle class="telemetry-point" cx="572" cy="67" r="5"/>
+                        </svg>
+                        <div class="graph-times"><span>08:00</span><span>08:15</span><span>08:30</span><span>08:45</span><span>09:00</span></div>
+                    </div>
+                    <div class="chart-key"><span><i class="pi-dot"></i> Raspberry Pi 3</span><span><i class="conveyor-dot"></i> Banda</span><span><i class="sensors-dot"></i> Sensores</span><span><i class="automation-dot"></i> Domótica</span><span><i class="access-dot"></i> Acceso</span></div>
+                </article>
+                <article class="telemetry-card node-health-card">
+                    <div class="telemetry-heading"><div><p class="eyebrow">COBERTURA</p><h2>Estado de nodos</h2><span>Disponibilidad representativa.</span></div></div>
+                    <div class="health-ring"><strong>5</strong><span>/ 5</span></div>
+                    <div class="health-caption"><b>Arquitectura disponible</b><span>1 Raspberry Pi 3 · 4 ESP32</span></div>
+                    <div class="health-bars"><div><span>Pi 3</span><i><b style="width:100%"></b></i></div><div><span>ESP32</span><i><b style="width:100%"></b></i></div></div>
+                </article>
+                <article class="telemetry-card telemetry-half">
+                    <div class="telemetry-heading"><div><p class="eyebrow">CARGA POR PROCESO</p><h2>Actividad por ESP32</h2><span>Distribución ilustrativa de la red.</span></div></div>
+                    <div class="node-bar-chart"><div><i class="conveyor-dot"></i><span>Banda</span><b style="width:78%">78%</b></div><div><i class="sensors-dot"></i><span>Sensores</span><b style="width:62%">62%</b></div><div><i class="automation-dot"></i><span>Domótica</span><b style="width:44%">44%</b></div><div><i class="access-dot"></i><span>Acceso</span><b style="width:31%">31%</b></div></div>
+                </article>
+                <article class="telemetry-card telemetry-half">
+                    <div class="telemetry-heading"><div><p class="eyebrow">SEÑALES DE REFERENCIA</p><h2>Canales por función</h2><span>Lecturas visuales, sin sensores conectados.</span></div></div>
+                    <div class="signal-grid"><div><strong>12</strong><span>Eventos de banda</span><i class="conveyor-dot"></i></div><div><strong>08</strong><span>Variables de sensor</span><i class="sensors-dot"></i></div><div><strong>06</strong><span>Circuitos eléctricos</span><i class="automation-dot"></i></div><div><strong>02</strong><span>Puertas monitorizadas</span><i class="access-dot"></i></div></div>
+                </article>
+            </section>
+
+            <section class="ot-summary-grid">
+                <article class="panel ot-summary-card">
+                    <p class="eyebrow">ALCANCE DE LA MAQUETA</p>
+                    <h2>Una red simple y segmentada</h2>
+                    <ul class="scope-list">
+                        <li><span>01</span> Raspberry Pi 3 como punto central de la red OT.</li>
+                        <li><span>04</span> ESP32, una por responsabilidad operativa.</li>
+                        <li><span>00</span> Automatizaciones reales activadas en esta interfaz.</li>
+                    </ul>
+                </article>
+                <article class="panel ot-summary-card">
+                    <p class="eyebrow">RESPONSABILIDADES</p>
+                    <h2>Separación por proceso</h2>
+                    <div class="responsibility-list">
+                        <div><i class="conveyor-dot"></i><span>Banda transportadora</span><b>ESP32-01</b></div>
+                        <div><i class="sensors-dot"></i><span>Sensores</span><b>ESP32-02</b></div>
+                        <div><i class="automation-dot"></i><span>Domótica eléctrica</span><b>ESP32-03</b></div>
+                        <div><i class="access-dot"></i><span>Acceso a puertas</span><b>ESP32-04</b></div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

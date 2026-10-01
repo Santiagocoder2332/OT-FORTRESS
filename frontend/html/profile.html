@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OT-FORTRESS | Perfil de Usuario</title>
+    <link class="theme" rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a class="brand" href="dashboard.html">
+                <img src="../assets/fortress-mark.svg" alt="Logo de OT-Fortress">
+                <span><b>OT-</b>FORTRESS</span>
+            </a>
+            <p class="workspace">RED OT · RASPBERRY PI 3</p>
+            <nav class="navigation" aria-label="Navegación Principal">
+                <a href="dashboard.html"><span>⌘</span> Resumen</a>
+                <a href="alerts.html"><span>◉</span> Alertas <b>0</b></a>
+                <a href="traffic.html"><span>⌁</span> Red de nodos</a>
+                <a href="assets.html"><span>▦</span> ESP32 conectadas</a>
+                <a href="events.html"><span>◫</span> Bitácora OT</a>
+            </nav>
+            <a class="sensor-card" href="sensors.html" style="text-decoration:none;">
+                <span class="sensor-dot"></span>
+                <div>
+                    <strong>Nodos ESP32</strong>
+                    <small>4 de 4 disponibles</small>
+                </div>
+            </a>
+            <div class="account" style="display:flex; justify-content:space-between; align-items:center; border-color: #80d7fa; background: rgba(145,210,239,.18); border-radius: 8px;">
+                <a href="profile.html" style="display:flex; align-items:center; gap:10px; color:inherit; text-decoration:none;">
+                    <span class="avatar">SA</span>
+                    <span>
+                        <strong>Security Admin</strong>
+                        <small>Ver Perfil</small>
+                    </span>
+                </a>
+                <a href="login.html" title="Cerrar sesión" style="color:#a9c9d9; text-decoration:none; font-size:12px;">✕</a>
+            </div>
+        </aside>
+
+        <main class="dashboard module-page">
+            <header class="dashboard-header">
+                <div>
+                    <p class="eyebrow">GESTIÓN DE CUENTA Y ACCESO</p>
+                    <h1>Perfil del Operador</h1>
+                    <p class="subtitle">Gestione credenciales, claves MFA y permisos de acceso en la consola OT-FORTRESS.</p>
+                </div>
+                <div class="header-actions">
+                    <button class="primary-button" id="saveProfileBtn">Guardar Cambios</button>
+                </div>
+            </header>
+
+            <!-- Resumen del Perfil -->
+            <section class="panel profile-summary" style="margin-bottom: 25px;">
+                <div class="avatar profile-summary__avatar">SA</div>
+                <div class="profile-summary__details">
+                    <h2 style="color: #183d52; font-size: 20px;">Security Admin</h2>
+                    <p style="color: #6e8797; font-size: 12px; margin-top: 4px;">admin.seguridad@ot-fortress.com · Líder de Ciberseguridad OT</p>
+                    <div class="profile-summary__badges">
+                        <span class="badge green">Super Admin</span>
+                        <span class="badge blue">MFA Activo</span>
+                        <span class="badge green">TLS 1.3 Conectado</span>
+                    </div>
+                </div>
+                <a href="login.html" class="outline-button" style="color: #d85d63; border-color: #f9cdcf;">Cerrar Sesión</a>
+            </section>
+
+            <!-- Secciones de Configuración -->
+            <section class="main-grid">
+                <!-- Información Personal -->
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Información Personal</h2>
+                            <p>Detalles del titular de la cuenta</p>
+                        </div>
+                    </div>
+                    <form style="display: grid; gap: 14px; margin-top: 10px;" id="profileForm">
+                        <div>
+                            <label style="display: block; font-size: 11px; font-weight: 700; color: #36586b; margin-bottom: 4px;">Nombre Completo</label>
+                            <input type="text" value="Security Admin" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d8e6ee; border-radius: 6px; font-size: 12px; outline: none;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 11px; font-weight: 700; color: #36586b; margin-bottom: 4px;">Correo Corporativo</label>
+                            <input type="email" value="admin.seguridad@ot-fortress.com" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d8e6ee; border-radius: 6px; font-size: 12px; outline: none;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 11px; font-weight: 700; color: #36586b; margin-bottom: 4px;">Cargo en Planta / Rol</label>
+                            <input type="text" value="Lead OT Cybersecurity Engineer" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d8e6ee; border-radius: 6px; font-size: 12px; outline: none;">
+                        </div>
+                    </form>
+                </article>
+
+                <!-- Contraseña y Seguridad -->
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Seguridad y Credenciales</h2>
+                            <p>Actualizar contraseña de acceso</p>
+                        </div>
+                    </div>
+                    <form style="display: grid; gap: 14px; margin-top: 10px;">
+                        <div>
+                            <label style="display: block; font-size: 11px; font-weight: 700; color: #36586b; margin-bottom: 4px;">Contraseña Actual</label>
+                            <input type="password" value="••••••••••••" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d8e6ee; border-radius: 6px; font-size: 12px; outline: none;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 11px; font-weight: 700; color: #36586b; margin-bottom: 4px;">Nueva Contraseña</label>
+                            <input type="password" placeholder="Mínimo 10 caracteres" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d8e6ee; border-radius: 6px; font-size: 12px; outline: none;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 11px; font-weight: 700; color: #36586b; margin-bottom: 4px;">Confirmar Nueva Contraseña</label>
+                            <input type="password" placeholder="Repita la nueva contraseña" style="width: 100%; height: 36px; padding: 0 12px; border: 1px solid #d8e6ee; border-radius: 6px; font-size: 12px; outline: none;">
+                        </div>
+                    </form>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

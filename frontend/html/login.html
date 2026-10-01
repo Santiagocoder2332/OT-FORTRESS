@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OT-FORTRESS | Acceso Glass</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <main class="login-page">
+        <!-- Barra superior Logo -->
+        <header class="topbar">
+            <a class="brand" href="login.html" aria-label="OT-FORTRESS">
+                <span class="brand-icon"><img src="../assets/fortress-mark.svg" alt="Logo de OT-Fortress"></span>
+                <span><b>OT-</b>FORTRESS</span>
+            </a>
+        </header>
+
+        <!-- Tarjeta de vidrio flotante -->
+        <section class="glass-card" aria-label="Acceso a la Consola">
+            <!-- Lado izquierdo: Bienvenido -->
+            <div class="glass-welcome">
+                <h1>¡Bienvenido!</h1>
+                <h2>A nuestra consola de ciberseguridad industrial</h2>
+                <p class="welcome-copy">Supervise las operaciones de su red OT en tiempo real con la máxima visibilidad y control.</p>
+                
+                <div class="social-icons">
+                    <span title="Sitio Web">🌐</span>
+                    <span title="Comunidad">👥</span>
+                    <span title="Soporte">💬</span>
+                    <span title="Seguridad">🛡️</span>
+                </div>
+            </div>
+
+            <!-- Lado derecho: Formulario -->
+            <div class="glass-form">
+                <h2 class="form-title">Iniciar Sesión</h2>
+                <form id="loginForm">
+                    <div class="glass-input-group">
+                        <label for="username">Correo Electrónico</label>
+                        <div class="glass-input-wrapper">
+                            <input type="text" id="username" name="username" placeholder="usuario@empresa.com" autocomplete="username" required>
+                            <span class="input-right-icon">✉</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-input-group">
+                        <label for="password">Contraseña</label>
+                        <div class="glass-input-wrapper">
+                            <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+                            <span class="input-right-icon">🔒</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="remember">
+                            <span>Recordarme</span>
+                        </label>
+                        <a href="#" class="forgot-link">¿Olvidó su contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="pill-login-button" id="loginButton">
+                        <span>Iniciar Sesión</span>
+                    </button>
+
+                    <div id="loginMessage" class="login-message" role="status" aria-live="polite"></div>
+                </form>
+
+                <p class="signup-footer">Acceso restringido a la cuenta autorizada.</p>
+            </div>
+        </section>
+
+        <footer class="glass-footer">
+            OT-FORTRESS © 2026 <span>•</span> Ciberseguridad de Redes Industriales OT
+        </footer>
+    </main>
+    <script src="../js/login.js"></script>
+</body>
+</html>
